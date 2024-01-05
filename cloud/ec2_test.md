@@ -14,9 +14,9 @@
 - 인스턴스 크기만을 다르게 설정한 뒤 인스턴스 생성
 - 각 인스턴스에 Anaconda 설치 후 가상 환경 생성
 - 가상 환경에서 수강생의 Github 페이지를 Crawling하는 python 코드 실행
-    - Crawling Code
 - 5번씩 실행 후 평균 계산
-        
+     - Crawling Code
+       
         import requests
         from bs4 import BeautifulSoup
         import os
@@ -52,6 +52,7 @@
 
 
 **실행 속도**
+
 | t4g.nano | t4g.micro | t4g.small |
 | --- | --- | --- |
 | 1.946 sec | 2.032 sec | 2.001 sec |
@@ -61,6 +62,7 @@
 
   
 **크레딧 사용량**
+
 | t4g.nano | t4g.micro | t4g.small |
 | --- | --- | --- |
 | 0.308 | 0.371 | 0.193 |
@@ -68,4 +70,5 @@
 - 실행한 코드가 CPU 성능에 영향을 미칠 정도로 복잡하지 않았기 때문에 크레딧 사용량은 실행 속도에 영향을 미치지 않는 것 같음 
 
 **AWS 공식 문서에 나와있는 인스턴스 사양**
+
 ![image](https://github.com/seohee99/shinhan-pro-digital-academy/assets/53520867/3542a7e1-03b7-4ae8-a3d3-4b10244e1f86)

@@ -1,7 +1,10 @@
-## HTML/CSS 
+## HTML/CSS 스터디
 UI/UX 디자인과 구현(HTML/CSS)
 
-## 추천 VSCODE EXTENSIONS
+<br>
+<br>
+
+✔️ 추천 VSCODE EXTENSIONS
 
 - Live Preview : HTML을 미리보기 서버로 볼 수 있음
 - Material Icon Theme : 파일 아이콘을 깔끔하고 보기 좋게 변경

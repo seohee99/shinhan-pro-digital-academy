@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    font-family: 'TheJamsil5Bold';
+}
+
+nav{
+    align-items:flex-start;
+    height: 10%;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.navContainer{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    gap: 50px;
+
+    color: #403930;
+
+    font-size: 120%;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 30px */
+}
+
+header{
+    display: flex;
+    padding : 5% 12% 5% 12%;
+    align-items: center;
+    gap: 5%;
+}
+
+.headerLeftSection{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+    align-items: flex;
+}
+
+.headerRightSection{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; 
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid #0e102d; 
+    background: url("https://images.unsplash.com/photo-1703700414418-2969a8dc8978?q=80&w=431&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), lightgray 50% / cover no-repeat;
+    background-position: center center;
+}
+
+
+.badge{
+    padding: 3% 5%;
+    border-radius: 10px;
+    background: #e6eeff;  
+    width: fit-content;
+    color: #000;
+    font-size: 110%;
+    font-weight: 500;
+    line-height: 120%; /* 36px */
+    margin-bottom: 5%;
+}
+
+header h1 {
+    color: #333;
+    font-size: 300%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 80px */
+    letter-spacing: -1px;
+}
+  
+header h1 em {
+    font-style: normal;
+    background: linear-gradient(
+        99deg,
+        #001f8f 3.58%,
+        rgba(36, 255, 203, 0.5) 90.34%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.headerLinkContainer{
+    display: flex;
+    gap: 5%;
+    white-space: nowrap
+}
+.headerLink1{
+    text-decoration: none;
+    display: flex;
+    width: 30%;
+    padding: 3% 5%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #000;
+    color: #E6EEFF;
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 80%; /* 36px */
+
+    
+}
+.headerLink2{
+    text-decoration: none;
+    display: flex;
+    width: 30%;
+    padding: 3% 5%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 4px solid #403930;
+    color: #403930;
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 80%; /* 36px */
+}

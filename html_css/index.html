@@ -1,103 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML/CSS</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style2.css">
 </head>
-<style>
-    table, th, td {
-      border:3px dotted turquoise;
-    }
-</style>
 <body>
-    <h2> 📃태그 활용 실습 </h2>
-    <br>
-
-    <h2>🏷️Link</h2>
-
-    <!-- target="_blank" :: 새창, 탭에서 링크 열림 -->
-    <a href="https://github.com/seohee99/" target="_blank">Visit My Github!</a>
-    <br><br><br>
-    <hr>
+    <nav>
+        <div class="navContainer">
+            <div class="navItem">Home</div>
+            <div class="navItem">Project</div>
+            <div class="navItem">Recommend</div>
+            <div class="navItem">메뉴</div>
+        </div>
+    </nav>
     
-    <h2>🏷️Login Forms</h2>
-
-    <form action="/login_page.html">
-        <label for="ID">ID :</label>
-        <input type="text" id="ID" name="ID" ><br>
-        <label for="PW">Password:</label>
-        <input type="password" id="PW" name="PW"><br><br>
-        <input type="submit" value="Login">
-    </form> 
-
-    <p>If you click the "Submit" button, the form-data will be sent to a page called "/login_page.html".</p>
-    <br><br>
-    <hr>
-    
-    <h2>🏷️ Image </h2>
-
-    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1050&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cake1" width="300" height="300" display="inline-block">
-    <img src="https://images.unsplash.com/photo-1560180474-e8563fd75bab?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cake2" style="width:250px;height:300px; display:inline-block">
-
-    <hr>
-
-    <!-- <style> 태그로 빼거나, 각각의 태그에 직접 넣거나 -->
-    <!-- <style>
-        div {
-            width: 30%;
-            display: inline-block;
-        }
-    </style> --> 
-    
-    <h2>🏷️ Div, P, Display </h2>
-    <div style="background-color:#FFF4A3; display: block; width: 60%;">
-        <h2>London</h2>
-        <p>London is the capital city of England.</p>
-        <p>London has over 13 million inhabitants.</p>
-    </div>
-    
-    <div style="background-color:#FFC0C7; display: block; width: 60%;">
-        <h2>Oslo</h2>
-        <p>Oslo is the capital city of Norway.</p>
-        <p>Oslo has over 600.000 inhabitants.</p>
-    </div>
-    
-    <div style="background-color:#D9EEE1; display: block; width: 60%;">
-        <h2>Rome</h2>
-        <p>Rome is the capital city of Italy.</p>
-        <p>Rome has almost 3 million inhabitants.</p>
-    </div>
-
-    <hr>
-
-    <h2>🏷️Table :: January Third Week Timetable</h2>
-
-    <table style="width:100%">
-    <tr>
-        <th>Mon(15)</th>
-        <th>Tue(16)</th>
-        <th>Wed(17)</th>
-        <th>Thu(18)</th>
-        <th>FRI(19)</th>
-    </tr>
-    <tr>
-        <td>8:00 - 17:00</td>
-        <td>8:00 - 17:00</td>    	 
-        <td>8:00 - 17:00</td>
-        <td>8:00 - 17:00</td>
-        <td>8:00 - 17:00</td>
-    </tr>
-    <tr>
-        <td>HTML/CSS(1)</td>
-        <td>HTML/CSS(2)</td>
-        <td>HTML/CSS(3)</td>
-        <td>HTML/CSS(4)</td>
-        <td>실무형 웹페이지 실습</td>
-    </tr>
-    </table>
-    
+    <header>
+        <!-- <div class="headerContainer"> -->
+            <div class="headerLeftSection">
+                <div class="badge"> 👋 안녕하세요! </div>
+                <h1>신입 백엔드 개발자. <br/>
+                    <em>Problem Solver.</em> <br/>
+                    박서희 입니다. <br/>
+                </h1>
+                <div class="headerLinkContainer">
+                    <a class="headerLink1" href="https://github.com/seohee99" target="_blank">Github Link</a>
+                    <a class="headerLink2" href="#" target="_blank">Resume Link</a>
+                </div>
+            </div>
+            <div class="headerRightSection">
+                <!-- <img src="https://images.unsplash.com/photo-1703700414418-2969a8dc8978?q=80&w=431&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> -->
+                
+            </div>
+        <!-- </div> -->
+    </header>
 </body>
-
 </html>

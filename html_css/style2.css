@@ -42,7 +42,7 @@ header{
     display: flex;
     flex-direction: column;
     width: 60%;
-    
+    flex-shrink: 0; 
     align-items: flex;
 }
 
@@ -162,6 +162,7 @@ header h1 em {
     align-items: center;
     justify-content: center;
     gap: 24px;
+    flex-shrink: 0; 
 }
 .techStack .title{
     color: #333;
@@ -203,3 +204,24 @@ header h1 em {
     width: 88px;
     height: 87px;
 }
+
+.contact{
+    font-family: 'TheJamsil5Bold';
+
+    text-decoration: none;
+
+    width: fit-content;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 10px solid #BBD5F7;
+    background: linear-gradient(98deg, #BED3FF -10.83%, #D2F3E5 51.79%, #FFEBD9 110.76%);
+
+    position: fixed;
+    top: 88%;
+    left: 88%;
+
+    padding: 1% 1%;
+
+    color: rgba(64, 57, 48, 0.80);
+    text-align: center;
+} 

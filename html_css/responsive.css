@@ -1,0 +1,285 @@
+@font-face {
+  font-family: 'TheJamsil5Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body{
+  font-family: 'TheJamsil5Bold';
+  margin:0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  height: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.navItem {
+  color: #403930;
+  font-size: 13.5px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 18px */
+}
+
+header{
+  display: flex;
+  padding-top : 8%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom : 8%;
+  align-items: center;
+  gap: 5%;
+}
+
+.headerLeftSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-shrink: 0; 
+  align-items: flex;
+}
+
+.headerRightSection{
+  display: none;
+}
+
+.badge{
+  padding: 3% 5%;
+  border-radius: 10px;
+  background: #e6eeff;  
+  width: fit-content;
+  color: #000;
+  font-size: 100%;
+  font-weight: 500;
+  line-height: 120%; /* 36px */
+  margin-bottom: 3%;
+}
+
+header h1 {
+  color: #333;
+  font-size: 235%;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 80px */
+  letter-spacing: -1px;
+}
+
+header h1 em {
+  font-style: normal;
+  background: linear-gradient(
+      99deg,
+      #001f8f 3.58%,
+      rgba(36, 255, 203, 0.5) 90.34%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headerLinkContainer{
+  display: flex;
+  gap: 5%;
+  white-space: nowrap;
+  padding-bottom: 5%;
+  
+}
+
+.headerLink1{
+  text-decoration: none;
+  display: flex;
+  width: 30%;
+  padding: 5% 5%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #000;
+  color: #E6EEFF;
+  font-size: 100%;
+  font-weight: 600;
+  line-height: 80%; /* 36px */
+  
+}
+.headerLink2{
+  text-decoration: none;
+  display: flex;
+  width: 30%;
+  padding: 5% 5%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 4px solid #403930;
+  color: #403930;
+  font-size: 110%;
+  font-weight: 600;
+  line-height: 80%; /* 36px */
+  
+}
+
+/* 내 소개 section */
+.aboutMeContainer{
+  background: linear-gradient(96deg, rgba(189, 210, 255, 0.40) 1.72%, rgba(116, 224, 215, 0.40) 158.93%);
+  width:100%;
+  /* height: 100vh; */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMeContainer .title{
+  padding-top: 15%;
+  padding-left: 8%;
+  padding-right: 8%;
+  font-size: 105%;
+  line-height: 170%; 
+  font-weight: 600;
+}
+
+.aboutMeContainer .content{
+  font-weight: 100;
+  font-size: 90%;
+  padding-left: 8%;
+  padding-right: 8%;
+  line-height: 150%; 
+  padding-bottom: 5%;
+}
+
+/* ----- 기술 스택 ----- */
+
+.techStackContainer {
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.techStackContainer p {
+  margin-bottom: 60px;
+}
+
+.techStackContainer h3 {
+  display: inline-block;
+  font-size: 30px;
+  font-style: normal;
+  letter-spacing: -0.8px;
+  padding-bottom: 10px;
+}
+.techStackContainer p {
+  display: inline-block;
+  text-align: start;
+  color: #333;
+  font-size: 15px;
+}
+
+.teckLogos {
+  max-width: 100%;
+  margin: 0 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 15px;
+  grid-column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+
+}
+.teckLogos img{
+  max-width: 100%;
+  
+}
+
+/* 프로젝트 section */
+
+.myProject{
+  display: flex;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(244, 244, 244, 0.50);
+}
+
+.myProject h3{
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 70px;
+}
+
+.myProject .project{
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px 20px 20px 20px;
+  background: #E6EEFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+  gap: 20px;
+  justify-content: center;
+}
+
+.myProject .content h1{
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.myProject .content{
+  font-family: 'Pretendard-Regular';
+  display: inline-block;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  flex-direction: column;
+  width: 90%;
+  padding-left: 0;
+  justify-content: center;
+  font-size: 15px;
+}
+
+
+
+
+.myProject .image{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding-left: 43px;
+
+}
+.myProject .image img{
+  margin: 2%;
+  width: 70px;
+  border-radius: 16.08px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+.fixedContactButton{
+  display: none;
+  /* box-sizing: border-box; */
+}
+

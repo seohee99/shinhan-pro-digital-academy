@@ -14,10 +14,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
+
     <link rel="stylesheet" href="./style2.css">
+    <link rel="stylesheet" href="./responsive.css" media="(max-width:390px)">
 </head>
 <body>
+
     <nav>
         <div class="navContainer">
             <div class="navItem">Home</div>
@@ -56,42 +60,68 @@
         </div>
     </section>
 
-    <section class="techStack">
-        <div class="title">
-            <h1><em> 기술 스택 </em></h1> <br/><br/>
-            지금까지 활용해 본 기술들입니다. <br/>
+    <!-- 기술 스택 섹션 -->
+    <section class="techStackContainer">
+        <h3>기술 스택</h3>
+        <p className="techStackDescription">
+            지금까지 활용해 본 기술들입니다. <br>
             넓고 깊은 기술 스택을 얻기 위해 노력하고 있습니다.
-        </div>
-        <div class="content">
-            <div class="stack1">
-            
+        </p>
+        <div>
+            <ul class="teckLogos">
                 <img src="./img/bootstrap.svg">
                 <img src="./img/css.svg">
                 <img src="./img/git.svg">
                 <img src="./img/greensock.svg">
                 <img src="./img/sass.svg">
                 <img src="./img/icon.svg">
-            </div>
-            <div class="stack2">
+
                 <img src="./img/html.svg">
                 <img src="./img/react.svg">
                 <img src="./img/vscode.svg">
                 <img src="./img/js.svg">                
                 <img src="./img/tailwind.svg">                
-                <img src="./img/github.svg">                
-            </div>
+                <img src="./img/github.svg">  
+            </ul>
         </div>
-
     </section>
 
     <section class="myProject">
         <div class="projects">
             
-            <h1>프로젝트</h1>
+            <h3>프로젝트</h3>
 
-            <div class="project1">
+            <div class="project">
                 <div class="content">
-                    <h3>Sheepify States</h3> <br/>
+                    <h1>Sheepify States</h1> <br/>
+                    React, Typescript, MobX <br/><br/>
+
+                    인기 있는 Sheepify 앱을 위해 귀여운 스타일로 빈 상태 화면을 디자인했습니다.
+
+                </div>
+                <div class="image">
+                    <img src="./img/project1.png">     
+                    <img src="./img/project2.png">     
+                    <img src="./img/project3.png">     
+                </div>
+            </div>
+            <div class="project">
+                <div class="content">
+                    <h1>Sheepify States</h1> <br/>
+                    React, Typescript, MobX <br/><br/>
+
+                    인기 있는 Sheepify 앱을 위해 귀여운 스타일로 빈 상태 화면을 디자인했습니다.
+
+                </div>
+                <div class="image">
+                    <img src="./img/project1.png">     
+                    <img src="./img/project2.png">     
+                    <img src="./img/project3.png">     
+                </div>
+            </div>
+            <div class="project">
+                <div class="content">
+                    <h1>Sheepify States</h1> <br/>
                     React, Typescript, MobX <br/><br/>
 
                     인기 있는 Sheepify 앱을 위해 귀여운 스타일로 빈 상태 화면을 디자인했습니다.
@@ -106,11 +136,13 @@
         </div>
     </section>
 
-    <aside>
+
+
+    <div class="fixedContactButton">
         <div>
             <a class="contact" href="mailto:imshee99@gmail.com" target="_blank">Contact Me!</a>
         </div>
-    </aside>
+    </div>
     <footer>
 
     </footer>

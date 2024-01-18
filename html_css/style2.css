@@ -5,13 +5,22 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'intelone-mono-font-family-regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
     font-family: 'TheJamsil5Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
 
-
+:root {
+    --main-bg-gradient: linear-gradient(96deg, rgba(189, 210, 255, 0.40) 1.72%, rgba(116, 224, 215, 0.40) 158.93%);
+    --main-font-gradient: linear-gradient(99deg, #001F8F 3.58%, rgba(36, 255, 203, 0.50) 90.34%);
+}
 
 body{
     font-family: 'TheJamsil5Bold';
@@ -65,6 +74,7 @@ header{
     background: url("./img/profile.jpg"), lightgray 50% / cover no-repeat;
     background-position: center center;
     background-size: 100%;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -90,16 +100,26 @@ header h1 {
 
 }
   
-header h1 em {
-    font-style: normal;
-    background: linear-gradient(
-        99deg,
-        #001f8f 3.58%,
-        rgba(36, 255, 203, 0.5) 90.34%
-    );
+.animateFont {
+    background: var(--main-font-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    width: 13.5ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #403930;
+  }
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+@keyframes blink {
+    50% {
+    border-color: transparent
+    }
 }
 
 .headerLinkContainer{
@@ -254,35 +274,133 @@ header h1 em {
     background: #E6EEFF;
     border-radius: 10px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
-    gap: 40px;
+    gap: 80px;
+    flex-shrink: 0; 
+    
 }
 
 .myProject .content{
     display: inline-block;
-    padding-left: 40px;
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    flex-direction: column;
     width: 60%;
+    padding-left: 10px;
 }
 .myProject .image{
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
     box-sizing: border-box;
-
+    padding-right: 10px;
 }
 .myProject .image img{
-    
     margin: 3%;
-    /* display: flex; */
     width: 80px;
-    /* height: 327.965px; */
-    /* flex-shrink: 0; */
     border-radius: 16.08px;
-    /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* 동료 피드백 */
+
+.feedbackContainer{
+    font-family: 'Pretendard-Regular';
+    display: flex;
+    padding: 80px 0px 120px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x:scroll;
+}
+
+.feedbackContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.feedbackContainer h3{
+    font-family: 'TheJamsil5Bold';
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+}
+.feedbacks{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.feedback{
+    display: flex;
+    width: 460px;
+    height: 264px;
+    padding: 0px 39px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    background: #FAFAFA;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.feedback em{
+    display: inline-block;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+/*  포부  */
+
+.aspiration {
+    display: flex;
+    padding: 64px 0px;
+    padding-left: 12%;
+    padding-right: 12%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #E6EEFF;
+}
+
+.aspiration .content{
+    color: #403930;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 150%; /* 60px */
+    letter-spacing: -0.96px;
+    align-self: stretch;
+}
+
+/* footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    background: #FAFAFA;
+    gap: 35px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+footer img{
+    width: 30px;
+    height: 30px;
+}
+footer .footerIcon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+footer .content{
+    font-family: 'intelone-mono-font-family-regular';
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Dark, #21243D);
+    text-align: center;
+    font-size: 14px;
 }

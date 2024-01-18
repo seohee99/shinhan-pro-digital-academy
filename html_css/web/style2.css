@@ -280,8 +280,12 @@ align-items: center;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
     gap: 80px;
     flex-shrink: 0; 
-    
+    transition: transform 0.3s ease-in-out;
 }
+
+.myProject .project:hover {
+    transform: scale(1.1);
+  }
 
 .myProject .content{
     display: inline-block;

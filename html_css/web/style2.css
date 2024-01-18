@@ -330,17 +330,11 @@ align-items: center;
 }
 .feedbacks{
     display: flex;
-    /* justify-content: center; */
     gap: 60px;
     align-items: flex-start;
-    overflow: scroll;
+    overflow-x: scroll;
     width: 80%;
-    /* white-space: nowrap; */
     padding: 3% 3% 3% 3%;
-}
-
-.feedbacks::-webkit-scrollbar{
-    /* display: none; */
 }
 
 .feedback{

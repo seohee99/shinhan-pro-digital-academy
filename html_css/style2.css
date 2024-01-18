@@ -30,8 +30,8 @@ body{
 nav{
     align-items:flex-start;
     height: 10%;
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .navContainer{
@@ -50,7 +50,7 @@ nav{
 
 header{
     display: flex;
-    padding : 5% 12% 5% 12%;
+    padding : 5% 15% 5% 15%;
     align-items: center;
     gap: 5%;
 }
@@ -61,6 +61,7 @@ header{
     width: 60%;
     flex-shrink: 0; 
     align-items: flex;
+    white-space: nowrap;
 }
 
 .headerRightSection{
@@ -169,8 +170,8 @@ header h1 {
 
 .aboutMeContainer .title{
     padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
     font-size: 230%;
     line-height: 170%; 
 }
@@ -178,8 +179,8 @@ header h1 {
 .aboutMeContainer .content{
     font-family: 'Pretendard-Regular';
     font-size: 120%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
     line-height: 150%; 
     padding-bottom: 5%;
 }
@@ -187,26 +188,15 @@ header h1 {
 /* ----- 기술 스택 ----- */
 
 .techStackContainer {
-    padding:  100px 20px;
+    padding:  100px 50px;
+    justify-content: center;
+align-items: center;
+    
 }
   
 .techStackContainer p {
     font-family: 'Pretendard-Regular';
     margin-bottom: 80px;
-}
-
-.techStackContainer h3 {
-    
-    color: #000;
-    text-align: center;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 26px; /* 65% */
-    letter-spacing: -0.8px;
-    padding-bottom: 24px;
-}
-.techStackContainer p {
     color: #333;
     text-align: center;
     font-size: 20px;
@@ -215,13 +205,27 @@ header h1 {
     line-height: 26px; /* 130% */
 }
 
+.techStackContainer h3 {    
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    line-height: 26px; /* 65% */
+    letter-spacing: -0.8px;
+    padding-bottom: 24px;
+}
+
+
 .teckLogos {
     max-width: 80%;
-    margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 40px;
     grid-column-gap: 80px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .fixedContactButton{

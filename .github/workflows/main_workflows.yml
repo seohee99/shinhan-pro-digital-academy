@@ -23,4 +23,6 @@ jobs:
       - name: Upload to S3
         run: aws s3 sync html_css/web s3://seohee-digital-portfolio/
       
+      - name: Invalidate cloudfront
+        run: aws cloudfront create-invalidation --distribution-id EZUVZVLTK766W --paths /* # Cloudfront
 

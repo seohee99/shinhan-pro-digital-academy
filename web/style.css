@@ -1,0 +1,53 @@
+.headerContainer{
+    margin-top: 20px;
+    border: green solid 1px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.logo {
+    width: 40px; 
+    height: 40px; 
+    margin: 4px;
+    padding: 3px;
+    border: none; 
+}
+
+.search-button {
+    width: 40px; 
+    height: 40px; 
+    margin: 3px;
+    background-image: url('./img/search-icon.png'); 
+    background-size: cover; 
+    border: none; 
+}
+
+.btn-outline-secondary {
+    background-color: transparent; 
+    background-clip: padding-box; 
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.card-body{
+    padding: 5%;
+}
+
+.card-title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.card img{
+    width: 30%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}

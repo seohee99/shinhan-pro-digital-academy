@@ -23,3 +23,11 @@ let {height, title:t,...rest} = options;
 console.log(height);
 console.log(t);
 console.log(rest);
+
+
+function func1({width, height}){
+    console.log(width);
+    console.log(height);
+}
+
+func1(options);

@@ -12,6 +12,7 @@ import PrimeCalculator from './components/PrimeCalculator';
 import { ThemeProvider } from './components/ThemeProvider';
 import ThemeButton from './components/ThemeButton';
 import MyPage from './components/MyPage';
+import ToDoPostComponent from './components/ToDoPostComponent';
 
 function App() {
   const [visible, setVisible] = React.useState(false)
@@ -35,10 +36,12 @@ function App() {
       {/* memo를 사용하지 않았을 때 */}
       {/* <PrimeCalculator text={4}></PrimeCalculator> */}
 
-      <ThemeProvider>
+      {/* <ThemeProvider>
           <ThemeButton/>
               <MyPage/>
-      </ThemeProvider>
+      </ThemeProvider> */}
+
+      <ToDoPostComponent></ToDoPostComponent>
     </div>
   )
 }

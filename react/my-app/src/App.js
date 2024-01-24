@@ -8,7 +8,10 @@ import BlinkComponent from './components/BlinkComponent';
 import CountComponent from './components/CountComponent';
 import FocusButton from './components/RegisterInputButton';
 import ToDoComponent from './components/ToDoComponent';
-
+import PrimeCalculator from './components/PrimeCalculator';
+import { ThemeProvider } from './components/ThemeProvider';
+import ThemeButton from './components/ThemeButton';
+import MyPage from './components/MyPage';
 
 function App() {
   const [visible, setVisible] = React.useState(false)
@@ -28,6 +31,14 @@ function App() {
       <FocusButton></FocusButton> */}
 
       <ToDoComponent></ToDoComponent>
+
+      {/* memo를 사용하지 않았을 때 */}
+      {/* <PrimeCalculator text={4}></PrimeCalculator> */}
+
+      <ThemeProvider>
+          <ThemeButton/>
+              <MyPage/>
+      </ThemeProvider>
     </div>
   )
 }

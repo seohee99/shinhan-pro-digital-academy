@@ -8,6 +8,7 @@ export default function ToDoPostComponent() {
     useEffect( () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
+            // .then(data => console.log(data))    
             .then(data => setPosts(data))
             .catch(error => console.error(error));
     }, []);
@@ -26,8 +27,8 @@ export default function ToDoPostComponent() {
             <hr/>
             <h3 style={{margin:50}}>API fetch를 이용한 게시판</h3>
             {posts.map(post => (
-                <div  className="d-flex justify-content-center">
-                <Card style={{width: 500, margin:15, border:'#d6d2c4 solid 5px'}} key={post.id}>
+                <div key={post.id} className="d-flex justify-content-center">
+                <Card style={{width: 500, margin:15, border:'#d6d2c4 solid 5px'}}>
                     <Card.Header>
                         <Card.Text>{post.id}</Card.Text>
                         <Card.Title>{post.title}</Card.Title>

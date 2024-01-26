@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import fs from 'fs';
 
 // 페이지 요청
 async function fetchPage(url){
@@ -52,7 +53,9 @@ async function parseData(pageData){
     }).get(); // .get() => jQuery 객체를 일반 배열로 변환
 
     // 모든 promise가 완료될 때까지 기다리기 
-    return Promise.all(quotes);
+    // json 파일로 저장 
+    const result =  Promise.all(quotes);
+    return fs.writeFileSync('./quote.json', JSON.stringify(result));
     
 }
 

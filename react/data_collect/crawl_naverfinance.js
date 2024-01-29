@@ -37,7 +37,9 @@ async function fetchDailyPrice(url) {
 
 async function crawlFinance() {
   const code = '005930'; // 삼성전자의 종목 코드
-  const url = `https://finance.naver.com/item/sise_day.nhn?code=${code}`;
+  // iframe src를 가져와야한다!
+  // html의 network에서 iframe의 src에 요청을 보내야함 
+  const url = `https://finance.naver.com/item/sise_day.naver?code=${code}`;
   const dailyPrices = await fetchDailyPrice(url);
   
   console.log(dailyPrices);

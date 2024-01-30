@@ -54,6 +54,7 @@ async function parseData(data){
         // 이미지를 img 폴더에 저장
         let imgPath = "";
         if(image.length > 0){
+            // 이미지 url을 arraybuffer(바이트배열) 형식으로 get 요청 -> 이미지 정보를 받아온다 
             const imgData = await axios.get(image, {
                 responseType: 'arraybuffer'
             });

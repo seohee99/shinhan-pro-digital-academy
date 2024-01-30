@@ -52,13 +52,13 @@ async function parseData(data){
         const $detail = cheerio.load(detailData).html();
 
         // 이미지를 img 폴더에 저장
+        let imgPath = "";
         if(image.length > 0){
             const imgData = await axios.get(image, {
                 responseType: 'arraybuffer'
             });
-            const imgPath = `img/${idx++}.jpg`
+            imgPath = `img/${idx++}.jpg`
             fs.writeFileSync(imgPath, imgData.data);
-
         }
 
         await sleep(2000); 
@@ -68,9 +68,7 @@ async function parseData(data){
             publish : publish,
             summary : summary,
             image : image,
-            if(imgPath){
-                imgPath : imgPath
-            },
+            imgPath : imgPath,
             detailPage : $detail.replace(/[\n\t]+/g, ' ')
 
         }

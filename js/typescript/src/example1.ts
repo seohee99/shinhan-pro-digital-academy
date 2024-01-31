@@ -104,3 +104,34 @@ function UserAction(user:IProfessor | IStudent){
         console.log(user.evaluate)
     }
 }
+
+// Literal Type
+let direction: "left" | "right" | "up" | "down"; // 이 네가지만 받을거임
+direction = "left"; // vaild
+//direction = "forward"; // invalid
+
+// Generic Type
+
+// Todo List의 generic type 정의 
+interface ITodolist {
+    id : string | number, 
+    title : string,
+    color : string
+}
+
+
+// const todoList = useState<ITodolist[]>([]); // 방법 1
+function useState<T>(arg: T): [T, (arg:T)=> void]{
+    return [arg, (arg2)=> {}]
+}
+type todoList = ITodolist[] | null; // 방법 2
+// type todoList = Array<ITodolist>;
+
+
+
+
+
+
+
+
+

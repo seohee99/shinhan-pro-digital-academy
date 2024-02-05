@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-    Comment.findById(req.params.id)
+    Comment.find({board : req.params.id})
         .then(comment => {
             res.json(comment);
         })

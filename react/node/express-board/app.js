@@ -39,7 +39,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bird',birdRouter);
 app.use('/board',boardRouter);
-app.use('/comment',commentRouter);
+app.use('/',commentRouter);
 
 app.get('/sample', (req, res) => {
   res.send("get Sample");

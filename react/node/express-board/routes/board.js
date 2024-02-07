@@ -32,7 +32,7 @@ router.get('/', (req, res, next)=>{
 
 
 router.get('/:id', (req,res,next) => {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     Board.findById(req.params.id)
         .then(board => {
             // id로 방문할 때마다 방문한 board title을 세션에 배열로 저장 
@@ -42,8 +42,8 @@ router.get('/:id', (req,res,next) => {
             req.session.boardPath.push(board.title);
             
             res.json(board);
-            console.log(board);
-            console.log(req.session.boardPath);
+            // console.log(board);
+            console.log("상세 페이지 Title ::" ,req.session.boardPath);
         })
         .catch((error) => {
             console.error(error);

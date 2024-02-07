@@ -46,11 +46,22 @@ app.use(
   })
 )
 
+app.use((req,res,next)=> {
+  console.log("방문 Url");
+  if(!req.session.reqestUrl){
+    req.session.reqestUrl = [];
+  }
+  req.session.reqestUrl.push(req.originalUrl);
+  console.log(req.session.reqestUrl);
+
+  next();
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bird',birdRouter);
 app.use('/board',boardRouter);
-app.use('/',commentRouter);
+app.use('/comment',commentRouter);
 
 app.get('/sample', (req, res) => {
   res.send("get Sample");

@@ -4,12 +4,12 @@ const router = express.Router();
 let Comment = require("../model/Comment");
 let Board = require("../model/Board");
 
-router.get('/comments', (req, res, next) => {
+router.get('/', (req, res, next) => {
     Comment.find()
     .then(data => res.send(data));
 });
 
-router.get('/:id/comment', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
     Comment.find({board : req.params.id})
         .then(comment => {
             res.json(comment);
@@ -19,7 +19,7 @@ router.get('/:id/comment', (req, res, next) => {
         });
 });
 
-router.post('/:boardId/comment', (req, res, next) => {
+router.post('/:boardId', (req, res, next) => {
     Board.findById(req.params.boardId).then(data =>   
         Comment.create({
             board : data._id,

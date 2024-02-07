@@ -4,22 +4,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
+var session = require('express-session');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const boardRouter = require('./routes/board');
-const birdRouter = require('./routes/bird');
-const commentRouter = require('./routes/comment');
+var boardRouter = require('./routes/board');
+var birdRouter = require('./routes/bird');
+var commentRouter = require('./routes/comment');
 
 
 // DB Connection
-const DB_USER = process.env.DB_USER;
-const DB_PASSWORD = process.env.DB_PASSWORD;
-const DB_HOST = process.env.DB_HOST;
-const DB_NAME = process.env.DB_NAME;
+var DB_USER = process.env.DB_USER;
+var DB_PASSWORD = process.env.DB_PASSWORD;
+var DB_HOST = process.env.DB_HOST;
+var DB_NAME = process.env.DB_NAME;
 
-const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`;
+var DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`;
 mongoose.connect(DB_URL, { retryWrites: true, w: "majority"} )
         .then( () => console.log("Connected Successful"))
         .catch(err => console.log(err));
@@ -27,13 +29,22 @@ mongoose.connect(DB_URL, { retryWrites: true, w: "majority"} )
 
 var app = express();
 
-// view engine setup
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "my-secret",
+    resave : true,
+    saveUninitialized : true,
+    cookie : {
+      httpOnly : true,
+      secure : false
+    }
+  })
+)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

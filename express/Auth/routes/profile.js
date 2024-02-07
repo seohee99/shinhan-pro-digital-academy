@@ -10,7 +10,7 @@ router.get("/:paramId", (req,res,next) => {
     req.session.viewCount++;
 
     if (!req.session.path){
-        req.session.parh = [];
+        req.session.path = [];
     }
     console.log(req.params.paramId);
     req.session.path.push(req.params.paramId);

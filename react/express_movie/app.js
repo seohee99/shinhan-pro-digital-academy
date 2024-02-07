@@ -3,25 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require("mongoose");
-require('dotenv').config();
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
-// DB Connection
-const DB_USER = process.env.DB_USER;
-const DB_PASSWORD = process.env.DB_PASSWORD;
-const DB_HOST = process.env.DB_HOST;
-const DB_NAME = process.env.DB_NAME;
-
-const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`;
-mongoose.connect(DB_URL, { retryWrites: true, w: "majority"} )
-        .then( () => console.log("Connected Successful"))
-        .catch(err => console.log(err));
-
 
 
 app.use(logger('dev'));

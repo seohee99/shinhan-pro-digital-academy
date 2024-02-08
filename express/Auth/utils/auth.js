@@ -1,4 +1,4 @@
-const jwt = require("jwonwebtoken");
+const jwt = require("jsonwebtoken");
 
 function createToken(visibleUser, maxAge = 60 * 60 * 24 * 3){
     return jwt.sign(visibleUser, process.env.JWT_SECRET || "MyJWT", {
@@ -8,14 +8,14 @@ function createToken(visibleUser, maxAge = 60 * 60 * 24 * 3){
 
 function verifyToken(_token) {
     if (!_token) {
-    return null;
+        return null;
     }
-    const verifiedToken = jwt.verify(_token, process.env.JWT_SECRET
-    || "MyJWT");
-    return verifiedToken;
+    const verifiedToken = jwt.verify(_token, process.env.JWT_SECRET || "MyJWT");
+        return verifiedToken;
     }
-    module.exports = {
+
+module.exports = {
     createToken,
     verifyToken,
-    };
+};
     

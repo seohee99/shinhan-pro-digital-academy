@@ -1,5 +1,13 @@
 import instance from "./base";
 
+export async function getUser() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.token) {
+        instance.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+    }
+    return user;
+}
+
 
 export async function fetchBoardList() {
     // 데이터 조회
@@ -11,5 +19,18 @@ export async function fetchBoardList() {
     } catch (error) {
         console.error(error);
     }
+}
+
+export async function createBoard({title, content}) {
+    try {
+        await getUser();
+        const response = await instance.post('/board', {
+            title,
+            content
+        })
+    } catch (error) {
+        console.error(error);
+    }
+    
 }
 

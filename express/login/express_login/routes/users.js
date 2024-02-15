@@ -5,6 +5,15 @@ var {createToken, verifyToken, authenticate} = require("../utils/auth");
 
 const User = require("../models/User");
 
+// http://localhost/users/logout => get/post 요청 상관없음 
+router.all('/logout', async(req, res, next)=> {
+  res.cookie("authToken", token,{
+    httpOnly : true,
+    expires : new Date(Date.now()), // 쿠키를 만료시킴
+  });
+  res.json({message : "로그아웃 되었습니다."})
+})
+
 // http://localhost/users/
 router.get('/', function(req, res, next) {
   User.find()
@@ -60,16 +69,6 @@ router.post('/login', async (req, res, next) => {
     next(error);
   }
 })
-// http://localhost/users/logout => get/post 요청 상관없음 
-router.all('/logout', async(req, res, next)=> {
-  res.cookie("authToken", token,{
-    httpOnly : true,
-    expires : new Date(Date.now()),
-  });
-  res.json({message : "로그아웃 되었습니다."})
-})
-
-
 
 router.get("/protected", authenticate, async (req, res, next) => {
   console.log(req.user);

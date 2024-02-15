@@ -21,7 +21,7 @@ export async function fetchBoardList() {
     }
 }
 
-export async function createBoard({title, content}) {
+export async function createBoard({ title, content }) {
     try {
         await getUser();
         const response = await instance.post('/board', {
@@ -31,6 +31,18 @@ export async function createBoard({title, content}) {
     } catch (error) {
         console.error(error);
     }
-    
+
+}
+
+export async function updateBoard({boardId,title, content}) {
+    try {
+        await getUser();
+        const response = await instance.put(`/board/${boardId}`, {
+            title,
+            content
+        })
+    } catch (error) {
+        console.error(error);
+    }
 }
 

@@ -22,7 +22,7 @@ export default function MyNavbar({ brandTitle, offCanvasTitle }) {
         setUser(null); // user 다시 빈 객체로
         alert("로그아웃 되었습니다.")
         navigate('/');
-        window.location.reload();
+        // window.location.reload();
     }
 
     return (

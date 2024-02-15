@@ -1,22 +1,23 @@
 /* eslint-disable no-unused-vars */
-import {React, useEffect, useState} from 'react';
+import { React, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Card, Button } from 'react-bootstrap';
-import {fetchBoardList} from '~/lib/apis/board'
+import { fetchBoardList } from '~/lib/apis/board'
 import { Link, useNavigate } from 'react-router-dom';
+import { Container, Card, Button } from 'react-bootstrap';
+import { PersonFill, LockFill, PencilFill, EyeFill } from 'react-bootstrap-icons';
 import BoardWritePage from './write/page';
 
 export default function BoardListPage() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [boardList, setBoardList] = useState([]);
-    
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     // localStorage에서 user 정보 불러오기
-    useEffect(()=>{
+    useEffect(() => {
         const userInfo = localStorage.getItem('user');
         if (userInfo) {
             const user = JSON.parse(userInfo);
@@ -25,7 +26,7 @@ export default function BoardListPage() {
     }, []);
 
     // board 리스트 불러오기 
-    useEffect( ()=> {
+    useEffect(() => {
         const fetchData = async () => {
             const data = await fetchBoardList(); // api 호출
             setBoardList(data); // 가져온 데이터 boardList에 저장
@@ -39,25 +40,45 @@ export default function BoardListPage() {
 
             {user && (
                 <>
-                <Button variant="primary" onClick={handleShow} style={{ float: 'right', margin: '10px' }}>
-                    글 작성하기
-                </Button>
-
-                <BoardWritePage show={show} handleClose={handleClose} handleShow={handleShow} />
+                    <Button class="btn" style={{ 'backgroundColor': 'pink', 'border': 'none', 'float': 'right', 'margin': '10px' }} onClick={handleShow} >
+                        글 작성하기
+                    </Button>
+                    <BoardWritePage show={show} handleClose={handleClose} handleShow={handleShow} />
                 </>
             )}
 
-            <Container>
+            <Container style={{ 'margin': 10, }}>
                 {boardList.map((board, index) => (
-                    <Card key={index} style={{ width: '500px', margin: '30px' }}>
-                        <Card.Body>
-                            <Card.Title>{board.title}</Card.Title>
-                            <Card.Body>{board.content}</Card.Body>
-                            <Link to={`/board/${board._id}`}  state= {{board: board}} key={board._id}>
-                                <Button variant='primary' className='text-decoration-none'>자세히 보기</Button>
-                            </Link>                        
-                        </Card.Body>
-                    </Card>
+                    <Link to={`/board/${board._id}`} state={{ board: board , user : user}} key={board._id}>
+                        <Button
+                            className='text-decoration-none'
+                            style={{
+                                margin: 50,
+                                padding: 0,
+                                border: 'none',
+                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // 그림자 효과
+                                transition: 'transform 0.3s', // 확대 효과 애니메이션
+                            }}
+                            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'} // 마우스 오버 시 확대
+                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} // 마우스 아웃 시 원래 크기로
+                        >
+                            <Card key={index} style={{ width: '500px', 'backgroundColor': '#F5F5F5', 'border': 'none' }}>
+                                <Card.Body >
+                                    <Card.Title>
+                                        {board.title}
+                                        {board.author === user._id ? (
+                                            <PersonFill style={{ float: 'right', fontSize: '1.5rem', color: 'gray' }} /> // 아이콘 추가
+                                        ) : (
+                                            <EyeFill style={{ float: 'right', fontSize: '1.5rem', color: 'gray' }} /> // 아이콘 추가
+
+                                        )}
+
+                                    </Card.Title>
+                                    <Card.Body>{board.content}</Card.Body>
+                                </Card.Body>
+                            </Card>
+                        </Button>
+                    </Link>
                 ))}
             </Container>
         </>

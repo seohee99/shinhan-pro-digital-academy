@@ -38,10 +38,10 @@ export default function BoardWritePage({ show, handleClose, handleShow }) {
 
           </Modal.Body>
           <ModalFooter>
-            <Button variant='primary' type='submit'>
+            <Button class="btn" style={{'backgroundColor': 'pink', 'border':'none'}} type='submit'>
               저장
             </Button>
-            <Button variant='secondary' onClick={handleClose}>
+            <Button class="btn" style={{'backgroundColor': 'black', 'border':'none'}}  onClick={handleClose}>
               닫기
             </Button>
           </ModalFooter>

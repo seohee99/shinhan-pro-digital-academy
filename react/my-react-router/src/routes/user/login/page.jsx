@@ -22,7 +22,7 @@ export default function Login() {
     const response = await login({email, password});
     alert(`${response.nickname}님 환영합니다.`);
     navigate('/');
-  }, [email, password])
+  }, [email, navigate, password])
 
   return (
     <Container style={{ display:'flex' ,justifyContent:"center", marginTop:100}}>

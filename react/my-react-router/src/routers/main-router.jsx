@@ -8,13 +8,20 @@ import BoardDetailPage from '~/routes/board/detail/page';
 import Userlayout from '~/routes/user/layout';
 import Login from '~/routes/user/login/page';
 import Signup from '~/routes/user/signup/page';
+import Layout from '~/components/Layout/Layout';
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <MainPage />,
-        index: true,
+        element: <Layout />,
+        children : [
+            {
+                path : '',
+                index : true,
+                element : <MainPage/>
+        }
+        ]
     },
     {
         path:'/users',

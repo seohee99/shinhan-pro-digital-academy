@@ -1,61 +1,60 @@
-import './App.css';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/Login';
-import Signup from './components/Signup';
+
+import { Button, Modal, Card, Alert, Container, Row, Col } from 'react-bootstrap';
 import Board from './components/Board';
-import { Button, Modal } from 'react-bootstrap';
-import React, {useState} from 'react';
+import Login from './components/Login'; // 변경된 컴포넌트 이름
+import Signup from './components/Signup'; // 변경된 컴포넌트 이름
 
 function App() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleCloseLogin = () => setShowLogin(false);
-  const handleShowLogin = () => setShowLogin(true);
- 
-  const handleCloseSignup = () => setShowSignup(false);
-  const handleShowSignup = () => setShowSignup(true);
+  const [showSignup, setShowSignup] = useState(false);
+  const [signupSuccess, setSignupSuccess] = useState(false); // 새로운 상태 변수
 
   const handleLogin = () => {
     setIsLoggedIn(true);
-    setShowLogin(false);
+  };
+
+  const handleShowSignup = () => {
+    setShowSignup(true);
+  };
+
+  const handleHideSignup = () => {
+    setShowSignup(false);
   };
 
   const handleSignup = () => {
-    setIsLoggedIn(true);
     setShowSignup(false);
-  }
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  }
+    setSignupSuccess(true); // 상태 변경
+  };
 
   return (
-    <div>
-      {isLoggedIn ? (
-        <Button variant='primary' onClick={handleLogout}>
-          로그아웃
-        </Button>
-      ) : (
-        <>
-        <Button variant='primary' onClick={handleShowLogin}>
-          로그인
-        </Button>
-        <Button variant='primary' onClick={handleShowSignup}>
-          회원가입
-        </Button>
+    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
+      <Row>
+        <Col>
+          {isLoggedIn ? (
+            <Board />
+          ) : (
+            <>
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Login onLogin={handleLogin} onShowSignup={handleShowSignup} />
+                </Card.Body>
+              </Card>
 
-        <Modal show={showLogin} onHide={handleCloseLogin}>
-          <Login onLogin={handleLogin} />
-        </Modal>
-
-        <Modal show={showSignup} onHide={handleCloseSignup}>
-          <Signup onSignup={handleSignup} />
-        </Modal>
-        </>
-      )}
-    </div>
+              <Modal show={showSignup} onHide={handleHideSignup}>
+                <Card>
+                  <Card.Body>
+                    <Signup onSignup={handleSignup} />
+                    {signupSuccess && <div>회원 가입에 성공하셨습니다.</div>} {/* 성공 메시지 */}
+                  </Card.Body>
+                </Card>
+              </Modal>
+            </>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

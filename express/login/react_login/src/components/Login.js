@@ -1,8 +1,8 @@
-// LoginForm.js
+// Login.js
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-function Login({ onLogin }) {
+function Login({ onLogin, onShowSignup }) {
   return (
     <Form>
       <Form.Group controlId="formBasicEmail">
@@ -17,6 +17,9 @@ function Login({ onLogin }) {
 
       <Button variant="primary" onClick={onLogin}>
         로그인
+      </Button>
+      <Button variant="secondary" onClick={onShowSignup} style={{ marginLeft: '10px' }}>
+        회원가입
       </Button>
     </Form>
   );

@@ -1,4 +1,4 @@
-// SignupForm.js
+// Signup.js
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 

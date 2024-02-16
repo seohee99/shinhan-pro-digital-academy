@@ -1,13 +1,15 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useContext, useState } from 'react'
 import { Form, Button, Container, Card } from 'react-bootstrap'
 import { redirect, useNavigate } from 'react-router-dom';
 import { login } from '~/lib/apis/auth';
-
+import {AuthContext} from '~/components/AuthProvider';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  // const [user, clientLogin] = useContext(AuthContext); 
+
 
   const onChangeEmail = useCallback((e)=>{
     setEmail(e.target.value);
@@ -22,6 +24,7 @@ export default function Login() {
     const response = await login({email, password});
     alert(`${response.nickname}님 환영합니다.`);
     navigate('/');
+    // clientLogin(response);
   }, [email, navigate, password])
 
   return (

@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { logout } from "~/lib/apis/auth";
+import { AuthContext } from "../AuthProvider";
 
 const EXPAND_BREAKPOINT = "md";
 
 export default function MyNavbar({ brandTitle, offCanvasTitle }) {
     const [user, setUser] = useState(null);
+    // const [user, clientLogin] = useContext(AuthContext);
+
     const navigate = useNavigate();
+    
 
     useEffect(()=>{
         const userInfo = localStorage.getItem('user');

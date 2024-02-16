@@ -21,6 +21,16 @@ export async function fetchBoardList() {
     }
 }
 
+export async function fetchBoard({boardId}) {
+    try {
+        const response = await instance.get(`/board/${boardId}`)
+        console.log(response);
+        return response
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export async function createBoard({ title, content }) {
     try {
         await getUser();
@@ -41,6 +51,15 @@ export async function updateBoard({boardId,title, content}) {
             title,
             content
         })
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function deleteBoard({boardId}) {
+    try {
+        await getUser();
+        const response = await instance.delete(`/board/${boardId}`)
     } catch (error) {
         console.error(error);
     }

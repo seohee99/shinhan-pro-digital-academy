@@ -49,16 +49,9 @@ export default function BoardListPage() {
 
             <Container style={{ 'margin': 10, }}>
                 {boardList.map((board, index) => (
-                    <Link to={`/board/${board._id}`} state={{ board: board , user : user}} key={board._id}>
-                        <Button
-                            className='text-decoration-none'
-                            style={{
-                                margin: 50,
-                                padding: 0,
-                                border: 'none',
-                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // 그림자 효과
-                                transition: 'transform 0.3s', // 확대 효과 애니메이션
-                            }}
+                    <Link to={`/board/${board._id}`} state={{ board: board , user : user}} key={board._id} onClick={() => window.scrollTo(0, 0)}>
+                        <Button className='text-decoration-none'
+                            style={{margin: 50, padding: 0, border: 'none', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',transition: 'transform 0.3s',}}
                             onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'} // 마우스 오버 시 확대
                             onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} // 마우스 아웃 시 원래 크기로
                         >
@@ -81,6 +74,8 @@ export default function BoardListPage() {
                     </Link>
                 ))}
             </Container>
+
+            
         </>
     );
 }

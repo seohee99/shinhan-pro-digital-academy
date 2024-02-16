@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Card, Form, Button, Container } from 'react-bootstrap';
 import { signup } from '~/lib/apis/auth';
+import {AuthContext} from '~/components/AuthProvider';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nickname, setNickname] = useState('');
+  const [user, setUser] = useState(null);
 
   const onChangeEmail = useCallback( (e) => {
     setEmail(e.target.value);

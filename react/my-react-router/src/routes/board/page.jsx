@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { fetchBoardList } from '~/lib/apis/board'
 import { Link, useNavigate } from 'react-router-dom';
 import { Container, Card, Button } from 'react-bootstrap';
-import { PersonFill, LockFill, PencilFill, EyeFill } from 'react-bootstrap-icons';
+import { PersonFill,  EyeFill } from 'react-bootstrap-icons';
 import BoardWritePage from './write/page';
 
 export default function BoardListPage() {

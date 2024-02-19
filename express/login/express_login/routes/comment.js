@@ -6,28 +6,31 @@ let Board = require('../models/Board');
 let Comment = require('../models/Comment');
 
 // /api/comment/?boardId=:boardId&page=1&size=10 GET (코멘트 조회)
-router.get('/:boardId', (req, res, next) => {
-    Board.findById(req.params.boardId).then(board => {
-        Comment.find()
-            .then(comments => {
-                res.status(201).json(comments)
-            })
-            .catch(error =>{
-                console.error(error);
-                res.status(400);
-                next(error);
-            })
-    })
+router.get('/:boardId', async (req, res, next) => {
+    try {
+        const { boardId } = req.params;
+        const board = await Board.findById(boardId);
+        if (!board) {
+            return res.status(404).json({ message: "Board not found." });
+        }
+        const comments = await Comment.find({ board: boardId });
+        res.status(200).json(comments);
+    } catch (error) {
+        console.error(error);
+        res.status(400);
+        next(error);
+    }
 });
+
 
 
 // 로그인 필요 (로그인 된 유저만 가능)
 // /api/comment POST
 router.post('/',authenticate, async(req, res, next) => {
     try {
-        const {board, content} = req.body;
+        const {boardId, content} = req.body;
         const newComment = await Comment.create({
-            board, 
+            board : boardId, 
             content,
             author : req.user._id,
         });

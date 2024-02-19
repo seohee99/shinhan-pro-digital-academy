@@ -15,8 +15,8 @@ export default function BoardDetailPage() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
+  
   const boardId = board._id
-
   // detail page 들어오면 board data 로딩해서 보여줌
   useEffect(()=>{
     const fetchdata = async () => {
@@ -30,6 +30,7 @@ export default function BoardDetailPage() {
   const onEdit = () => {
     setIsEdit(true);
   }
+
 
   const onDelete = (boardId) => {
     if (confirm("해당 게시글을 삭제하시겠습니까?")) {
@@ -59,7 +60,7 @@ export default function BoardDetailPage() {
         <BackspaceFill style={{ fontSize: '1.5rem', color: 'gray' }} />
       </Button>
       <h1>Detail Page</h1>
-
+      📃 Written By : {user.nickname}님
       {board.author === user._id && (
         <span style={{ float: 'right' }}>
           {
@@ -107,7 +108,7 @@ export default function BoardDetailPage() {
       </Container>
 
       <Container>
-          <CommentListPage boardId = {boardId} ></CommentListPage>
+          <CommentListPage board = {board} ></CommentListPage>
 
       </Container>
     </>

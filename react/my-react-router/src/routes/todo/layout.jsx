@@ -4,8 +4,7 @@ import { Outlet } from 'react-router-dom';
 import MyFooter from '~/components/MyFooter/MyFooter';
 import MyNavbar from '~/components/MyNavbar/MyNavbar';
 
-
-export default function Userlayout() {
+export default function TodoLayout() {
   return (
     <>
         <MyNavbar brandTitle='My-React-Board' />

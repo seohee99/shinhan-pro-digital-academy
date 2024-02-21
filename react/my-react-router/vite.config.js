@@ -16,7 +16,8 @@ export default defineConfig({
       {find : '~/components', replacement : '/src/components'},
       {find : '~/lib', replacement : '/src/lib'},
       {find : '~/routers', replacement : '/src/routers'},
-      {find : '~/routes', replacement : '/src/routes' }
+      {find : '~/routes', replacement : '/src/routes' },
+      {find : '~/store', replacement : '/src/store' },
     ],
   },
 });

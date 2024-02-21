@@ -1,14 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { logout } from "~/lib/apis/auth";
 import { AuthContext } from "../AuthProvider";
+import { useSelector } from "react-redux";
 
 const EXPAND_BREAKPOINT = "md";
 
 export default function MyNavbar({ brandTitle, offCanvasTitle }) {
     const [user, setUser] = useState(null);
     // const [user, clientLogin] = useContext(AuthContext);
+    const todoList = useSelector((state) => state.todo.todoList);
+    const todoNum = useMemo(() => {
+        return todoList.length;
+    }, [todoList])
 
     const navigate = useNavigate();
     
@@ -78,6 +83,7 @@ export default function MyNavbar({ brandTitle, offCanvasTitle }) {
                         <Nav className="justify-content-start flex-grow-1 pe-3">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/board">게시판</Nav.Link>
+                            <Nav.Link href="/todo">ToDo({todoNum})</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>

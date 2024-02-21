@@ -9,6 +9,9 @@ import Userlayout from '~/routes/user/layout';
 import Login from '~/routes/user/login/page';
 import Signup from '~/routes/user/signup/page';
 import Layout from '~/components/Layout/Layout';
+import TodoListPage from '~/routes/todo/todoList/page';
+import todoItemPage from '~/routes/todo/todoItem/page';
+import TodoLayout from '~/routes/todo/layout';
 
 
 const router = createBrowserRouter([
@@ -64,6 +67,18 @@ const router = createBrowserRouter([
             }
         ]
 
+    },
+    {
+        path : '/todo',
+        element : <TodoLayout />,
+        children :  [
+            {
+                path : '',
+                index : true,
+                element:<TodoListPage />,
+
+            },
+        ]
     }
 ]);
 

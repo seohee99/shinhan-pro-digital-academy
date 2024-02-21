@@ -58,7 +58,7 @@ router.put('/:commentId',authenticate, async(req, res, next) => {
         if(!updatedBoard) {
             return res.status(404).json({ error: '해당 댓글을 찾을 수 없습니다.' });
         }
-        res.status(201).json(updatedBoard);
+        res.status(201).json(updatedComment);
         
     } catch (error) {
         console.error(error);

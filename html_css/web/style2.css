@@ -188,12 +188,12 @@ header h1 {
 /* ----- 기술 스택 ----- */
 
 .techStackContainer {
-    padding:  100px 50px;
-    justify-content: center;
-align-items: center;
-    
+    display: flex; /* Flexbox를 이용하여 자식 요소들을 정렬합니다 */
+    flex-direction: column; /* 요소들을 세로로 나열합니다 */
+    align-items: center; /* 가로축에서 중앙 정렬합니다 */
+    padding: 10px 50px;
 }
-  
+
 .techStackContainer p {
     font-family: 'Pretendard-Regular';
     margin-bottom: 80px;
@@ -214,19 +214,34 @@ align-items: center;
     padding-bottom: 24px;
 }
 
+.techlists h4{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    line-height: 26px; /* 65% */
+    letter-spacing: -0.8px;
+    padding: 20px;
+}
+
+.techlist {
+    /* border: 1px solid #000; 테두리가 보이도록 수정 */
+    background: #93a0ba;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 5%;
+    margin: 2%;
+    color: #fff; /* 글자 색상을 흰색으로 설정하여 가시성 확보 */
+}
 
 .teckLogos {
-    max-width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-row-gap: 40px;
-    grid-column-gap: 80px;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+    display: flex; /* Flexbox를 사용 */
+    justify-content: center; /* 가로축에서 중앙 정렬 */
+    align-items: center; /* 세로축에서 중앙 정렬 */
+    gap: 10%; /* 요소들 사이의 간격 */
+    margin: auto; /* 상위 요소 내에서 가운데 정렬 */
+    width: 80%; /* 너비 설정 */
 }
+
 
 .fixedContactButton{
     font-family: 'TheJamsil5Bold';
@@ -254,6 +269,12 @@ align-items: center;
     background: rgba(244, 244, 244, 0.50);
 }
 
+.myProject a {
+    text-decoration: none; /* 링크에 대한 언더라인 제거 */
+    color: #000;
+}
+
+
 .myProject h3{
     color: #000;
     font-size: 40px;
@@ -269,6 +290,7 @@ align-items: center;
     padding-left: 50px;
     padding-right: 50px;
     gap: 70px;
+    text-decoration: none;
 
 }
 
@@ -284,7 +306,7 @@ align-items: center;
 }
 
 .myProject .project:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
   }
 
 .myProject .content{
@@ -302,10 +324,11 @@ align-items: center;
     justify-content: center;
     box-sizing: border-box;
     padding-right: 10px;
+    overflow: hidden;
 }
 .myProject .image img{
     margin: 3%;
-    width: 80px;
+    width: 90%;
     border-radius: 16.08px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
@@ -330,12 +353,23 @@ align-items: center;
 }
 .feedbacks{
     display: flex;
-    gap: 60px;
+    gap: 40px;
     align-items: flex-start;
     overflow-x: scroll;
     width: 80%;
     padding: 3% 3% 3% 3%;
 }
+
+/* 웹킷 기반 브라우저를 위한 스타일 */
+.feedbacks::-webkit-scrollbar {
+    display: none; /* 스크롤바를 숨김 */
+}
+
+/* Firefox를 위한 스타일 */
+.feedbacks {
+    scrollbar-width: none; /* Firefox에서 스크롤바를 숨김 */
+}
+
 
 .feedback{
     display: flex;
@@ -352,6 +386,10 @@ align-items: center;
     flex-shrink: 0;
     
 }
+
+.feedback:hover {
+    transform: scale(1.07);
+  }
 
 .feedback em{
     display: inline-block;

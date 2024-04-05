@@ -1,3 +1,5 @@
+package day01;
+
 public class EX07_Class {
     public static void main(String[] args) {
         NoteBook samsung = new NoteBook("삼성");

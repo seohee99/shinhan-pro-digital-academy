@@ -1,3 +1,5 @@
+package day01;
+
 public class EX03_Switch {
     public static void main(String[] args) {
 

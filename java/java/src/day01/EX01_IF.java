@@ -1,3 +1,5 @@
+package day01;
+
 public class EX01_IF {
     public static void main(String[] args) {
         int score = 87;

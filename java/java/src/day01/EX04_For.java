@@ -1,3 +1,5 @@
+package day01;
+
 public class EX04_For {
     public static void main(String[] args) {
         // 1부터 11사이에 있는 짝수

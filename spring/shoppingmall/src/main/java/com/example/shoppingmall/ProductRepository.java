@@ -31,4 +31,26 @@ public class ProductRepository {
         // map에서 list로 바로 안 바뀌기 때문!!
         return product_table.values().stream().toList();
     }
+
+    public List<Product> findProducts(int limit, int currentPage, int categoryId) {
+        List<Product> resultProducts = new ArrayList<>();
+
+        for (Product product : product_table.values()) {
+            if (product.getCategoryId() == categoryId)
+                resultProducts.add(product);
+        }
+
+        return resultProducts;
+    }
+
+    public void deleteProduct(int id) {
+        product_table.remove(id);
+    }
+
+    public void deleteProducts(List<Integer> productIds) {
+        for (int idx = 0; idx < productIds.size(); idx++) {
+            product_table.remove(productIds.get(idx));
+        }
+    }
+
 }

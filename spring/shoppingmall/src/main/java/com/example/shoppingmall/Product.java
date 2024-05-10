@@ -10,6 +10,8 @@ public class Product {
     private String name;
     private int price;
     private String description;
+    private int categoryId;
+
 
     // getter, setter
     // setter는 가능한 도메인 객체에는 만들면 안된다

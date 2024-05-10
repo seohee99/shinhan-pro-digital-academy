@@ -23,4 +23,16 @@ public class ProductService {
     public List<Product> findProducts(int limit, int currentPage) {
         return productRepository.findProducts(limit, currentPage);
     }
+
+    public List<Product> findProducts(int limit, int currentPage, int categoryId) {
+        return productRepository.findProducts(limit, currentPage, categoryId);
+    }
+
+    public void deleteProduct(int id) {
+        productRepository.deleteProduct(id);
+    }
+
+    public void deleteProducts(List<Integer> productIds) {
+        productRepository.deleteProducts(productIds);
+    }
 }

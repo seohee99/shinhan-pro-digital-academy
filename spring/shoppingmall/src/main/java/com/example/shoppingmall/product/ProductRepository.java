@@ -1,4 +1,4 @@
-package com.example.shoppingmall;
+package com.example.shoppingmall.product;
 
 import org.springframework.stereotype.Repository;
 

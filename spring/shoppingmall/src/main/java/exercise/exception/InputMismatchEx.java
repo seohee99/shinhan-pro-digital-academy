@@ -1,33 +1,34 @@
 package exercise.exception;
 
-import com.example.shoppingmall.utill.Validator;
-
 import java.util.Scanner;
 
 public class InputMismatchEx {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("INPUT :");
-        String input = scanner.next();
 
-        while(true){
+        while(true) {
+            System.out.println("점수를 입력하세요.");
+            String input = scanner.nextLine();
 
-            if(input.equals("q")){
-                System.out.println("q를 입력하여 종료합니다");
+            if (input.equals("q"))
                 break;
-            }
 
-            int score = Integer.parseInt(input);
             try {
-                if(score >= 60 ) System.out.println("합격");
-                else System.out.println("불합격");
-                break;
+                // inputMismatchEx
 
-            }catch (Exception e){
-                System.out.println("다시 입력하세요");
-                input = scanner.next();
+                int score = Integer.parseInt(input);
+
+                if (score >= 60)
+                    System.out.println("합격입니다.");
+                else
+                    System.out.println("다음에 다시 봐요.");
+            } catch (NumberFormatException e) {
+                // 잘못된 문자열을 숫자로 형 변환할 때 발생하는 예외 클래스
+                System.out.println("NumberFormatException");
             }
         }
+
+        System.out.println("프로그램 종료");
         scanner.close();
     }
 }

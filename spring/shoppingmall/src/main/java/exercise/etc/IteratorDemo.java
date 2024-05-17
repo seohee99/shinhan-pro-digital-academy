@@ -9,22 +9,28 @@ public class IteratorDemo {
     public static void main(String[] args) {
         ArrayList<String> sportStars = new ArrayList<>();
         sportStars.add("김연아");
+        sportStars.add("박태환");
         sportStars.add("손흥민");
-        sportStars.add("전정국");
-        sportStars.add("김태형");
+        sportStars.add("이강인");
+        sportStars.add("김송아");
 
-        for(int i=0; i<sportStars.size();i++){
+        for (int i = 0; i < sportStars.size(); i++) {
             System.out.println(sportStars.get(i));
         }
 
-        Iterator<String> sportStarIterator = sportStars.iterator();
-        while (sportStarIterator.hasNext()){
+        Iterator<String> sportStarIterator
+                = sportStars.iterator();
+        while(sportStarIterator.hasNext()){
             System.out.println(sportStarIterator.next());
         }
-        // Iterator + for : for each
-        for(String sportStar : sportStars){
+
+        for (String sportStar : sportStars) {
             System.out.println(sportStar);
+
+            if (sportStar == "김송아")
+                sportStars.remove(sportStar);
         }
+
 
         Map<Integer, String> fruits = new HashMap<>();
         fruits.put(1, "apple");
@@ -33,8 +39,13 @@ public class IteratorDemo {
         fruits.put(4, "blueberry");
         fruits.put(5, "melon");
 
-        // for-each
-        for(String fruit : fruits.values()){
+        Iterator<String> fruitIterator
+                = fruits.values().iterator();
+        while(fruitIterator.hasNext()){
+            System.out.println(fruitIterator.next());
+        }
+
+        for (String fruit : fruits.values()) {
             System.out.println(fruit);
         }
     }

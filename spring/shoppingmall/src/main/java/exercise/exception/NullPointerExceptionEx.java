@@ -5,15 +5,12 @@ public class NullPointerExceptionEx {
         String str = null;
         String[] strings = null;
 
-//        if(str != null)
-//            System.out.println(str.charAt(0));
-//
-//        if(strings != null)
-//            System.out.println(strings[0]);
         try {
+            System.out.println("전");
             System.out.println(str.charAt(0));
-        }catch (NullPointerException e){
-            System.out.println("예외요~");
+            System.out.println("후");
+        } catch (NullPointerException e) {
+            System.out.println("예외 터졌다!");
             System.out.println(e.getMessage());
             System.out.println(e.toString());
         }

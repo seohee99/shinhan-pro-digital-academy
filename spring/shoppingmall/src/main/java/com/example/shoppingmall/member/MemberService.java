@@ -9,17 +9,27 @@ public class MemberService {
 
     MemberRepository memberRepository;
 
-    public String join(Member member) {
-        return memberRepository.save(member);
+    public void makeConnection() {
+        memberRepository.makeConnection();
+    }
+
+    public Member join(Member member) {
+        memberRepository.save(member);
+        return memberRepository.findByUserId(member.getUserId());
     }
 
     public boolean checkDuplicateId(String userId) {
         Member existMember
-            = memberRepository.findById(userId);
+            = memberRepository.findByUserId(userId);
 
         if (existMember == null)
             return false;
         else
             return true;
     }
+
+
+//    public String login(Member member) {
+//        return memberRepository.find(member);
+//    }
 }

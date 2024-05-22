@@ -12,8 +12,8 @@ import lombok.Setter;
 @Table(name = "Member")
 public class Member {
 //    @JsonProperty("user_id") // DTO가 대신 받아주기 때문에 이 부분도 DTO로 옮겨야함
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //(JPA 식별자)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // pk
 
     private String userId;
@@ -31,17 +31,6 @@ public class Member {
         this.email = email;
         this.contact = contact;
     }
-
-    public static Member fromDtoToEntity(MemberDTO memberDto) {
-        return new Member(
-                memberDto.getUserId(),
-                memberDto.getPw(),
-                memberDto.getName(),
-                memberDto.getEmail(),
-                memberDto.getContact()
-        );
-    }
-
 
     @Override
     public String toString() {

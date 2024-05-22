@@ -6,3 +6,5 @@ CREATE TABLE Member (
     email VARCHAR(100) NOT NULL,
     contact VARCHAR(20) NOT NULL
 );
+
+SELECT * FROM `Member`;

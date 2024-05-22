@@ -26,21 +26,17 @@ public class MemberController {
 
     MemberService memberService;
 
-    @GetMapping("/datasource")
-    public void makeConnection(){
-        memberService.makeConnection();
-    }
     @PostMapping("/join")
     public ApiUtils.ApiResult join(@Valid @RequestBody MemberDTO memberDTO) {
 
         log.info(memberDTO.toString());
 
-//        if(isDuplicateId(memberDTO))
-//            return error("아이디 중복", HttpStatus.CONFLICT);
+        if(isDuplicateId(memberDTO))
+            return error("아이디 중복", HttpStatus.CONFLICT);
 
         Member requestMember = memberDTO.convertToEntity();
 
-        String userId = memberService.join(requestMember).getUserId();
+        String userId = memberService.join(requestMember);
         return success(userId);
     }
 
@@ -48,14 +44,14 @@ public class MemberController {
         return memberService.checkDuplicateId(member.getUserId());
     }
 
-    @PostMapping("/login")
-    public ApiUtils.ApiResult login(@RequestBody MemberDTO memberDTO){
-        log.info(memberDTO.toString());
-
-        Member requestMember = memberDTO.convertToEntity();
-
-        String userId = memberService.login(requestMember);
-        return success(userId);
-    }
+//    @PostMapping("/login")
+//    public ApiUtils.ApiResult login(@RequestBody MemberDTO memberDTO){
+//        log.info(memberDTO.toString());
+//
+//        Member requestMember = memberDTO.convertToEntity();
+//
+//        String userId = memberService.login(requestMember);
+//        return success(userId);
+//    }
 
 }

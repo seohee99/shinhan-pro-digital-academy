@@ -1,5 +1,6 @@
 package com.example.shoppingmall.member;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,13 +10,10 @@ public class MemberService {
 
     MemberRepository memberRepository;
 
-    public void makeConnection() {
-        memberRepository.makeConnection();
-    }
-
-    public Member join(Member member) {
+    @Transactional
+    public String join(Member member) {
         memberRepository.save(member);
-        return memberRepository.findByUserId(member.getUserId());
+        return memberRepository.findByUserId(member.getUserId()).getUserId(); // memberRepository.findId();
     }
 
     public boolean checkDuplicateId(String userId) {

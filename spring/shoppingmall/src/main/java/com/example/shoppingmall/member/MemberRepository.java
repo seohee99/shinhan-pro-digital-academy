@@ -14,34 +14,24 @@ import java.util.Map;
 @Repository
 @Slf4j
 public class MemberRepository {
-//    private Map<String, Member> memberTable
-//            = new HashMap<>();
-
-
-    @Autowired
-    DataSource dataSource;
 
     @Autowired
     private EntityManager entityManager;
 
-
-
-    public void makeConnection(){
-        DataSourceUtils.getConnection(dataSource);
-    }
-
-    public String save(Member member) {
+    public void save(Member member) {
         entityManager.persist(member);
-
-        Member savedMember = entityManager.find(Member.class, member.getId());
-        return savedMember.getUserId();
+//
+//        Member savedMember = entityManager.find(Member.class, member.getId());
+//        return savedMember.getUserId();
     }
 
 
     public Member findByUserId(String userId) {
+        String jpql = "SELECT m FROM Member m WHERE m.userId = :userId";
 
-        Member member = entityManager.createQuery("select m from Member as m where m.userId = :userId", Member.class).setParameter("userId", userId).getSingleResult();
-        return member;
+        return entityManager.createQuery(jpql, Member.class)
+                .setParameter("userId", userId)
+                .getSingleResult();
     }
 
     public Member findById(int id) {
